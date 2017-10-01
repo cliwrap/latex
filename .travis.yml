@@ -9,4 +9,8 @@ script:
 - >
   docker run wtanaka/ubuntu-1604-latex sh -c "apt-get update && apt-get install less"
 after_success:
-- curl https://registry.hub.docker.com/u/wtanaka/ubuntu-1604-latex/trigger/628c2c73-34c7-40ff-8c59-5c126d1aea8f/
+- >
+  curl -H "Content-Type: application/json"
+  --data '{"source_type": "Branch", "source_name": "master"}'
+  -X POST
+  https://registry.hub.docker.com/u/wtanaka/ubuntu-1604-latex/trigger/628c2c73-34c7-40ff-8c59-5c126d1aea8f/
