@@ -1,0 +1,12 @@
+services:
+- docker
+script:
+- docker build -t wtanaka/ubuntu-1604-latex .
+- >
+  docker run wtanaka/ubuntu-1604-latex latex --version
+  2>&1 | grep "3.14159265"
+# Make sure it is still possible to use apt
+- >
+  docker run wtanaka/ubuntu-1604-latex sh -c "apt-get update && apt-get install less"
+after_success:
+- curl https://registry.hub.docker.com/u/wtanaka/ubuntu-1604-latex/trigger/628c2c73-34c7-40ff-8c59-5c126d1aea8f/
