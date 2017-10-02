@@ -1,7 +1,9 @@
 FROM wtanaka/ubuntu-1604:latest
 MAINTAINER http://wtanaka.com/dockerfiles
 RUN apt-get update \
-  && apt-get -y install texlive-latex-recommended \
+  && apt-get -y install \
+    texlive-latex-recommended \
+    texlive-latex-extra \
   && apt-get clean autoclean -y \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt \
