@@ -3,4 +3,6 @@
 * `apt-get update` and `apt-get upgrade` run
 * LaTeX installed
 
-To use: [`docker pull wtanaka/ubuntu-1604-latex`](https://hub.docker.com/r/wtanaka/ubuntu-1604-latex/)
+[Instructions on how to use](https://wtanaka.com/node/8263)
+
+[Docker Hub page](https://hub.docker.com/r/wtanaka/ubuntu-1604-latex/)
