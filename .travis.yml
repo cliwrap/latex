@@ -3,11 +3,15 @@ services:
 script:
 - docker build -t wtanaka/ubuntu-1604-latex .
 - >
-  docker run wtanaka/ubuntu-1604-latex latex --version
+  docker run
+  -e "HOSTUID=`id -u`"
+  -v "`pwd`:/work"
+  wtanaka/ubuntu-1604-latex
+  latex --version
   2>&1 | grep "3.14159265"
 # Make sure it is still possible to use apt
 - >
-  docker run wtanaka/ubuntu-1604-latex sh -c "apt-get update && apt-get install less"
+  docker run --entrypoint="/bin/sh" wtanaka/ubuntu-1604-latex -c "apt-get update && apt-get install less"
 after_success:
 - >
   curl -H "Content-Type: application/json"
