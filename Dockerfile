@@ -17,3 +17,6 @@ RUN apt-get update \
     /var/lib/dpkg/triggers \
     /var/lib/cache \
     /var/lib/log
+COPY run-as-hostuid.sh /
+RUN chmod +x /run-as-hostuid.sh
+ENTRYPOINT ["/run-as-hostuid.sh"]
