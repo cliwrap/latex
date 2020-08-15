@@ -1,20 +1,20 @@
 services:
 - docker
 script:
-- docker build -t wtanaka/ubuntu-1604-latex .
+- docker build -t cliwrap/latex .
 - >
   docker run
   -e "HOSTUID=`id -u`"
   -v "`pwd`:/work"
-  wtanaka/ubuntu-1604-latex
+  cliwrap/latex
   latex --version
   2>&1 | grep "3.14159265"
 # Make sure it is still possible to use apt
 - >
-  docker run --entrypoint="/bin/sh" wtanaka/ubuntu-1604-latex -c "apt-get update && apt-get install less"
+  docker run --entrypoint="/bin/sh" cliwrap/latex -c "apt-get update && apt-get install less"
 after_success:
 - >
   curl -H "Content-Type: application/json"
   --data '{"source_type": "Branch", "source_name": "master"}'
   -X POST
-  https://registry.hub.docker.com/u/wtanaka/ubuntu-1604-latex/trigger/628c2c73-34c7-40ff-8c59-5c126d1aea8f/
+  https://hub.docker.com/api/build/v1/source/74d7bd63-9622-453a-8d3e-f3e9c9556a55/trigger/54deda4b-d3b7-4a95-819b-0cb7ecf2d2d0/call/
