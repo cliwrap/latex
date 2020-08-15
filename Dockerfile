@@ -1,4 +1,4 @@
-FROM wtanaka/xenial-uid:latest
+FROM cliwrap/xenial:latest
 MAINTAINER http://wtanaka.com/dockerfiles
 RUN apt-get update \
   && apt-get -y install \
