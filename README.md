@@ -5,4 +5,4 @@
 
 [Instructions on how to use](https://wtanaka.com/node/8263)
 
-[Docker Hub page](https://hub.docker.com/r/wtanaka/ubuntu-1604-latex/)
+[Docker Hub page](https://hub.docker.com/r/cliwrap/latex)
