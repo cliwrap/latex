@@ -1,7 +1,7 @@
 `ubuntu:16.04` with:
 
-* `apt-get update` and `apt-get upgrade` run
-* LaTeX installed
+  * `apt-get update` and `apt-get upgrade` run
+  * LaTeX installed
 
 [Instructions on how to use](https://wtanaka.com/node/8263)
 
