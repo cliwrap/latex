@@ -1,5 +1,5 @@
-FROM cliwrap/xenial:latest
-MAINTAINER http://wtanaka.com/dockerfiles
+FROM cliwrap/bionic:latest
+MAINTAINER https://github.com/cliwrap/latex
 RUN apt-get update \
   && apt-get -y install \
     texlive-latex-recommended \

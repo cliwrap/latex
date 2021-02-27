@@ -1,4 +1,4 @@
-`ubuntu:16.04` with:
+`ubuntu:18.04` with:
 
   * `apt-get update` and `apt-get upgrade` run
   * LaTeX installed
