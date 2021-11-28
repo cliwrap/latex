@@ -1,7 +1,7 @@
 FROM cliwrap/bionic:latest
 MAINTAINER https://github.com/cliwrap/latex
 RUN apt-get update \
-  && apt-get -y install \
+  && DEBIAN_FRONTEND="noninteractive" apt-get -y install \
     texlive-latex-recommended \
     texlive-latex-extra \
   && apt-get clean autoclean -y \
